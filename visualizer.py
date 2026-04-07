@@ -11,4 +11,17 @@ def visualize_sort(generator, arr, title='sorting_visualizer'):
 
     text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
     iteration = [0]
-    
+
+    def update_plot(arr, rec, iteration):
+        for rect, val in zip(rec, arr):
+            rec.set_height(val)
+        iteration[0] += 1
+        text.set_text(f"Number Of Operations: {iteration[0]}")
+
+    animation.FuncAnimation(
+        fig,
+        update_plot,
+        frames=generator,
+        repeat=False,
+        interval=50
+    )
