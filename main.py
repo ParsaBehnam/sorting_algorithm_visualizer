@@ -4,11 +4,12 @@ from bubble_sort import bubble_sort
 from insertion_sort import insertion_sort
 from merge_sort import merge_sort
 from selection_sort import selection_sort
+from quick_sort import quick_sort
 
 def main():
     size = int(input("Enter array size: "))
     data = [random.randint(1, 100) for _ in range(size)]
-    choice = int(input("1- Bubble Sort\n2- Insertion Sort\n3- Merge Sort\n4- Selection Sort:\nChoose sorting algorithm: "))
+    choice = int(input("1- Bubble Sort\n2- Insertion Sort\n3- Merge Sort\n4- Selection Sort:\n5- Quick Sort\nChoose sorting algorithm: "))
 
     match choice:
         case 1:
