@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use("QtAgg")
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
@@ -18,10 +20,13 @@ def visualize_sort(generator, arr, title='sorting_visualizer'):
         iteration[0] += 1
         text.set_text(f"Number Of Operations: {iteration[0]}")
 
-    animation.FuncAnimation(
+    anim = animation.FuncAnimation(
         fig,
         update_plot,
         frames=generator,
         repeat=False,
-        interval=50
+        interval=50,
+        cache_frame_data=False
     )
+
+    plt.show()
